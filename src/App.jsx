@@ -1,19 +1,15 @@
 import React, { useState } from 'react';
-import { MdDelete } from 'react-icons/md';
 import './App.css';
 
 import NewTodo from './components/NewTodo/NewTodo';
+import TodoList from './components/TodoList/TodoList';
 
 function App() {
-
-
   const [todos, setTodos] = useState([]);
 
   const onNewTodo = (value) => {
     setTodos([...todos, { id: new Date().getTime(), title: value, checked: false, }]);
   }
-
-
 
   const onToggle = (todo) => {
     setTodos(todos.map(obj => (
@@ -32,34 +28,12 @@ function App() {
         <h1 className='title'>Todo</h1>
       </header>
       <section className='main'>
-        <NewTodo onNewTodo={onNewTodo}/>
-
-        <ul className='todo-list'>
-          {todos.map(todo => (
-            <li key={todo.id.toString()} >
-              <span
-                className={['todo', todo.checked ? 'checked' : ''].join(' ')}
-                onClick={() => onToggle(todo)}
-                onKeyPress={() => onToggle(todo)}
-                tabIndex={0}
-                role="button">
-
-                {todo.title}
-
-              </span>
-              <button
-                aria-label="remove todo"
-                type='button'
-                className='remove'
-                onClick={() => onRemove(todo)}
-              >
-                <MdDelete size={28} />
-              </button>
-            </li>
-          ))}
-        </ul>
+        <NewTodo onNewTodo={onNewTodo} />
+        <TodoList
+          todos={todos}
+          onToggle={onToggle}
+          onRemove={onRemove} />
       </section>
-
     </section>
   )
 };
