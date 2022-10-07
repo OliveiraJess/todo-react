@@ -17,7 +17,7 @@ function App() {
   }
 
   const submit = () => {
-    setTodos([...todos,{ id: new Date().getTime(), title: value, checked: false, }]);
+    setTodos([...todos, { id: new Date().getTime(), title: value, checked: false, }]);
     erase();
   }
 
@@ -34,6 +34,13 @@ function App() {
     }
   };
 
+  const onToggle = (todo) => {
+    setTodos(todos.map(obj => (
+      obj.id === todo.id ? { ...obj, checked: !todo.checked } : obj
+    )));
+
+    console.log("toggle", todos)
+  }
 
   return (
     <section id='app' className='container'>
@@ -51,8 +58,17 @@ function App() {
         <ul className='todo-list'>
           {todos.map(todo => (
             <li key={todo.id.toString()} >
-              <span className='todo'>{todo.title}</span>
-              <button type='button' className='remove'><MdDelete size={28} /></button>
+              <span
+                className={['todo', todo.checked ? 'checked' : ''].join(' ')}
+                onClick={() => onToggle(todo)}
+                onKeyPress={() => onToggle(todo)}
+                tabIndex={0}
+                role="button">
+
+                {todo.title}
+
+              </span>
+              <button aria-label="remove todo" type='button' className='remove'><MdDelete size={28} /></button>
             </li>
           ))}
         </ul>

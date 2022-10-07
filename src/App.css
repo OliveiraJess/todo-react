@@ -23,6 +23,11 @@ ul.todo-list li {
   word-break : break-all;
 }
 
+.todo.checked {
+  color: #D8D9CF;
+  text-decoration: line-through;
+}
+
 .remove {
   background-color: transparent;
   border          : none;
