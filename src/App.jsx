@@ -56,9 +56,9 @@ function App() {
 
         <ul className='todo-list'>
           {todos.map(todo => (
-            <li key={todo.id.toString()}>
-              <span>{todo.title}</span>
-              <button type='button'><MdDelete size={28}/></button>
+            <li key={todo.id.toString()} >
+              <span className='todo'>{todo.title}</span>
+              <button type='button' className='remove'><MdDelete size={28} /></button>
             </li>
           ))}
         </ul>
