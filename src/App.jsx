@@ -1,9 +1,19 @@
 import React, { useState } from 'react';
+import { MdDelete } from 'react-icons/md';
 import './App.css';
 
 
 function App() {
+
+  const initialTodos = [
+    { id: 1, title: 'Estudar React', checked: false, },
+    { id: 2, title: 'Estudar Javascript', checked: false, },
+    { id: 3, title: 'Estudar Inglês', checked: true, },
+    { id: 4, title: 'Ir para a Academia', checked: true, },
+  ]
+
   const [value, setValue] = useState('');
+  const [todos, setTodos] = useState(initialTodos);
 
   const ESCAPE_KEY = 27;
   const ENTER_KEY = 13;
@@ -43,6 +53,15 @@ function App() {
           onChange={onChange}
           onKeyDown={onKeyDown}
         />
+
+        <ul className='todo-list'>
+          {todos.map(todo => (
+            <li key={todo.id.toString()}>
+              <span>{todo.title}</span>
+              <button type='button'><MdDelete size={28}/></button>
+            </li>
+          ))}
+        </ul>
       </section>
 
     </section>
