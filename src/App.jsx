@@ -38,8 +38,11 @@ function App() {
     setTodos(todos.map(obj => (
       obj.id === todo.id ? { ...obj, checked: !todo.checked } : obj
     )));
+  }
 
-    console.log("toggle", todos)
+  const onRemove = (todo) => {
+    setTodos(todos.filter(obj => obj.id !== todo.id));
+
   }
 
   return (
@@ -68,7 +71,14 @@ function App() {
                 {todo.title}
 
               </span>
-              <button aria-label="remove todo" type='button' className='remove'><MdDelete size={28} /></button>
+              <button
+                aria-label="remove todo"
+                type='button'
+                className='remove'
+                onClick={() => onRemove(todo)}
+              >
+                <MdDelete size={28} />
+              </button>
             </li>
           ))}
         </ul>
