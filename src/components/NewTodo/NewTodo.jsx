@@ -1,5 +1,6 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import './newTodo.css';
 
 function NewTodo({ onNewTodo }) {
   const [value, setValue] = useState('');

@@ -1,5 +1,6 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from 'react';
+import PropTypes from 'prop-types';
+import './todoList.css';
 import { MdDelete } from 'react-icons/md';
 
 function TodoList({ todos, onToggle, onRemove }) {
@@ -31,12 +32,12 @@ function TodoList({ todos, onToggle, onRemove }) {
   )
 };
 
-TodoList.protoTypes = {
+TodoList.propTypes = {
   todos: PropTypes.arrayOf(
     PropTypes.shape({
-      id:  PropTypes.number.isRequired,
-      title:  PropTypes.string.isRequired,
-      checked:  PropTypes.bool.isRequired,
+      id: PropTypes.number.isRequired,
+      title: PropTypes.string.isRequired,
+      checked: PropTypes.bool.isRequired,
     })
   ).isRequired,
   onToggle: PropTypes.func.isRequired,
