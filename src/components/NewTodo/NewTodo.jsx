@@ -13,7 +13,9 @@ function NewTodo({ onNewTodo }) {
   }
 
   const submit = () => {
-    if (onNewTodo) {
+    if (value === null || value === "") {
+      alert("Você precisa inserir uma tarefa.")
+    } else if (onNewTodo) {
       onNewTodo(value);
       erase();
     }
