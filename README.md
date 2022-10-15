@@ -4,7 +4,7 @@
 
 </div>
 <div align="center">
-<img height="400px" src="https://github.com/OliveiraJess/todo-react/blob/main/public/todoList.gif" alt="orleans/sc e orleans/us" />
+<img height="400px" src="https://github.com/OliveiraJess/todo-react/blob/main/public/todoList.gif" alt="Gif da aplicação funcionando" />
 </div>
 
 <p align="center">Nesse projeto você insere tarefas numa lista. </p>
@@ -34,7 +34,7 @@ Obs: Para inserir uma tarefa o campo não pode ficar em branco.
 <h2>🤝 Contribuindo </h2>
 
 * Conte a outras pessoas sobre este projeto 📢
-* Estrela no projeto ⭐️
+* Dê estrela no projeto ⭐️
 
 <h4 align="center">📌 Finalizado</h4>
 
