@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import './newTodo.css';
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 function NewTodo({ onNewTodo }) {
   const [value, setValue] = useState('');
 
@@ -12,9 +15,20 @@ function NewTodo({ onNewTodo }) {
     setValue('');
   }
 
+  // const notify = () => {
+  //   toast.error("Você precisa inserir uma tarefa.")
+  // };
+
+
+  const notify = () => {
+    toast.warn("Você precisa inserir uma tarefa.", {
+      theme: 'colored'
+    });
+  };
+
   const submit = () => {
     if (value === null || value === "") {
-      alert("Você precisa inserir uma tarefa.")
+      notify();
     } else if (onNewTodo) {
       onNewTodo(value);
       erase();
@@ -35,12 +49,15 @@ function NewTodo({ onNewTodo }) {
   };
 
   return (
-    <input className='new-todo'
-      placeholder='O que precisa ser feito?'
-      value={value}
-      onChange={onChange}
-      onKeyDown={onKeyDown}
-    />
+    <>
+      <input className='new-todo'
+        placeholder='O que precisa ser feito?'
+        value={value}
+        onChange={onChange}
+        onKeyDown={onKeyDown}
+      />
+      <ToastContainer />
+    </>
   )
 };
 
