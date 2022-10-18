@@ -29,7 +29,7 @@
 * Check: clique na tarefa;
 * Deletar: clique no icone de lixeira.
 
-Obs: Para inserir uma tarefa o campo não pode ficar em branco.
+Obs: Para inserir uma tarefa o campo não pode ficar em branco, caso esteja, irá aparecer uma notificação.
 
 <h2>🤝 Contribuindo </h2>
 
