@@ -31,6 +31,8 @@
 
 Obs: Para inserir uma tarefa o campo não pode ficar em branco, caso esteja, irá aparecer uma notificação.
 
+Deploy na Vercel: <a href="https://todo-react-phi-ten.vercel.app/" >Todo React</a>
+
 <h2>🤝 Contribuindo </h2>
 
 * Conte a outras pessoas sobre este projeto 📢
